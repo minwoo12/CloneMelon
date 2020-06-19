@@ -21,7 +21,7 @@
             .sideLogin__box
                 .sideLogin__box-column
                     img(src="../../images/SpeechBubble.png", alt="")
-                    .sideLogin__nickname=loggedUser.dataValues.nickname
+                    a(href=`/user${routes.me}`).sideLogin__nickname=loggedUser.dataValues.nickname
                     .sideLogin__nickname-sub 님
                 .sideLogin__box-column
                     .sideLogin__upButton △

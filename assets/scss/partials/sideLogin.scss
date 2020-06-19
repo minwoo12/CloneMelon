@@ -57,7 +57,14 @@
         display: flex;
         align-items: center;
         font-size: 12px;
+        a {
+          text-decoration: none;
+          &:visited {
+            color: black;
+          }
+        }
         .sideLogin__nickname {
+          margin-left: 5px;
           font-weight: bold;
         }
       }
@@ -75,6 +82,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      a {
+        &:visited {
+          color: black;
+        }
+      }
       .sideLogin__profile {
         font-size: 13px;
         text-decoration: underline;

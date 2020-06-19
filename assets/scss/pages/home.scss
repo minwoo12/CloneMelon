@@ -147,6 +147,9 @@ main {
               .loggedUser__myProfile {
                 margin-left: 5px;
                 text-decoration: underline;
+                &:visited {
+                  color: black;
+                }
               }
             }
             .loggedUser__logout {

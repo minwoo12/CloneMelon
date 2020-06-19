@@ -13,6 +13,7 @@
 @import "./mixins/homeAlbum.scss";
 @import "./mixins/homePopu.scss";
 @import "./mixins/sideMainTitle";
+@import "./mixins/chartBlock.scss";
 
 @import "./pages/home.scss";
 @import "./pages/musicChart.scss";
@@ -21,6 +22,7 @@
 @import "./pages/search.scss";
 @import "./pages/sign.scss";
 @import "./pages/loginForm.scss";
+@import "./pages/newestVideo.scss";
 
 html,
 body {

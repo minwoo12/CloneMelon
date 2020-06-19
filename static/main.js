@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./assets/js/header.js?");
+eval("var seePlus = document.querySelector(\"#jsViewPlus\");\nvar modal = document.querySelector(\"#jsViewPlusModal\");\n\nvar handleSee = function handleSee() {\n  if (modal.classList.contains(\"hide\")) {\n    modal.classList.remove(\"hide\");\n  } else {\n    modal.classList.add(\"hide\");\n  }\n};\n\nseePlus.addEventListener(\"click\", handleSee);\n\n//# sourceURL=webpack:///./assets/js/header.js?");
 
 /***/ }),
 

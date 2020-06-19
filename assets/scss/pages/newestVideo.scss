@@ -1,0 +1,19 @@
+.video__content-box {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .video__content {
+    width: 65%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    .videoBlock {
+      display: flex;
+      video {
+        margin-right: 20px;
+        width: 250px;
+      }
+    }
+  }
+}

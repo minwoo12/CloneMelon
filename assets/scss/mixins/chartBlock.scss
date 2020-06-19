@@ -1,0 +1,11 @@
+.nav__item {
+  a {
+    text-decoration: none;
+    .title {
+      color: black;
+      &:visited {
+        color: black;
+      }
+    }
+  }
+}

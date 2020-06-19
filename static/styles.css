@@ -336,7 +336,12 @@ footer {
         display: flex;
         align-items: center;
         font-size: 12px; }
+        .sideLogin .sideLogin__user-box .sideLogin__box .sideLogin__box-column:first-child a {
+          text-decoration: none; }
+          .sideLogin .sideLogin__user-box .sideLogin__box .sideLogin__box-column:first-child a:visited {
+            color: black; }
         .sideLogin .sideLogin__user-box .sideLogin__box .sideLogin__box-column:first-child .sideLogin__nickname {
+          margin-left: 5px;
           font-weight: bold; }
       .sideLogin .sideLogin__user-box .sideLogin__box .sideLogin__box-column:nth-child(2) .sideLogin__upButton {
         color: gray;
@@ -347,6 +352,8 @@ footer {
       display: flex;
       justify-content: space-between;
       align-items: center; }
+      .sideLogin .sideLogin__user-box .sideLogin__user a:visited {
+        color: black; }
       .sideLogin .sideLogin__user-box .sideLogin__user .sideLogin__profile {
         font-size: 13px;
         text-decoration: underline; }
@@ -379,6 +386,12 @@ footer {
 .popularity__grid .homePopu {
   width: 100%;
   height: 100%; }
+  .popularity__grid .homePopu a {
+    text-decoration: none; }
+    .popularity__grid .homePopu a:visited {
+      color: black; }
+    .popularity__grid .homePopu a .homePopu__title {
+      color: black; }
   .popularity__grid .homePopu img {
     width: 100%;
     height: 70%; }
@@ -406,6 +419,13 @@ footer {
         color: #00cd3c; }
     .sideMain__box .sideMain__nav .click__nav {
       color: #00cd3c; }
+
+.nav__item a {
+  text-decoration: none; }
+  .nav__item a .title {
+    color: black; }
+    .nav__item a .title:visited {
+      color: black; }
 
 main {
   width: 100%;
@@ -523,6 +543,8 @@ main {
               main .main__content .HomeLogin .loginBox .loggedUser__column:first-child .loggedUserBox .loggedUser__myProfile {
                 margin-left: 5px;
                 text-decoration: underline; }
+                main .main__content .HomeLogin .loginBox .loggedUser__column:first-child .loggedUserBox .loggedUser__myProfile:visited {
+                  color: black; }
             main .main__content .HomeLogin .loginBox .loggedUser__column:first-child .loggedUser__logout {
               width: 60px;
               height: 20px;
@@ -856,6 +878,22 @@ main {
     color: gray;
     font-size: 12px;
     text-align: center; }
+
+.video__content-box {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+  .video__content-box .video__content {
+    width: 65%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between; }
+    .video__content-box .video__content .videoBlock {
+      display: flex; }
+      .video__content-box .video__content .videoBlock video {
+        margin-right: 20px;
+        width: 250px; }
 
 html,
 body {
