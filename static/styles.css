@@ -811,6 +811,52 @@ main {
       padding-right: 20px;
       margin-bottom: 20px; }
 
+.loginForm__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .loginForm__box .loginForm__logo {
+    margin-bottom: 50px; }
+    .loginForm__box .loginForm__logo img {
+      width: 250px; }
+  .loginForm__box .kakaoLogin {
+    margin-bottom: 80px;
+    width: 400px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    background-color: #fae100;
+    border: 1px solid #fae100;
+    border-radius: 5px; }
+    .loginForm__box .kakaoLogin a:visited {
+      color: black; }
+    .loginForm__box .kakaoLogin img {
+      margin-right: 20px;
+      width: 30px; }
+  .loginForm__box .loginForm__sign {
+    margin-bottom: 150px;
+    font-size: 15px;
+    color: black; }
+  .loginForm__box .loginForm__footer .loginForm__nav {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center; }
+    .loginForm__box .loginForm__footer .loginForm__nav .nav__item {
+      margin-right: 30px;
+      font-size: 13px; }
+      .loginForm__box .loginForm__footer .loginForm__nav .nav__item img {
+        width: 50px; }
+    .loginForm__box .loginForm__footer .loginForm__nav .gray {
+      color: gray;
+      font-weight: bold; }
+  .loginForm__box .loginForm__footer .loginForm__kakao {
+    color: gray;
+    font-size: 12px;
+    text-align: center; }
+
 html,
 body {
   height: 100%;
