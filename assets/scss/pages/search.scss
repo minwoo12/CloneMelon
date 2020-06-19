@@ -1,0 +1,17 @@
+.search__musics {
+  display: flex;
+  justify-content: center;
+  .searchMusic__box {
+    margin: 20px 0px;
+    display: flex;
+    width: 65%;
+    a {
+      margin-right: 20px;
+      img {
+        width: 200px;
+      }
+    }
+  }
+  .content__box {
+  }
+}

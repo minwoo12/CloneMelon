@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{mainTitle}
+    body
+        .loginForm__logo
+            img(src="../images/Logo.png", alt="Melon 메인")
+        .loginBox
+            .kakaoLogin 
+                a(href=routes.kakao)
+                    img(src="../images/kakaoSpeechBubble.jpg")
+                    | 카카오계정 로그인
+        span.loginForm__sign 회원가입
+        footer.loginForm__footer
+            ul.loginForm__nav
+                li.nav__item 이용약관
+                li.nav__item 위치기반서비스 이용약관
+                li.nav__item 개인정보처리방침
+                li.nav__item 고객센터
+            ul.loginForm__nav
+                li.nav__item
+                    img(src="../images/Logo.png", alt="Melon티켓")
+                    | 티켓
+                li.nav__item Aztalk
+                li.nav__item 문의전화 : 1566-7727 (평일 09:00-18:00, 유료)
+            ul.loginForm__nav &copy Kakao Corp.

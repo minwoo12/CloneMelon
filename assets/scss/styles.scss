@@ -1,0 +1,28 @@
+@import "./config/reset.scss";
+@import "./config/mixins.scss";
+@import "./config/variable.scss";
+@import "./config/config.scss";
+
+@import "./layouts/main.scss";
+@import "./layouts/sideMain.scss";
+
+@import "./partials/header.scss";
+@import "./partials/footer.scss";
+@import "./partials/sideLogin.scss";
+
+@import "./mixins/homeAlbum.scss";
+@import "./mixins/homePopu.scss";
+@import "./mixins/sideMainTitle";
+
+@import "./pages/home.scss";
+@import "./pages/musicChart.scss";
+@import "./pages/adminAuth.scss";
+@import "./pages/administrator.scss";
+@import "./pages/search.scss";
+@import "./pages/sign.scss";
+
+html,
+body {
+  height: 100%;
+  min-width: 1000px;
+}

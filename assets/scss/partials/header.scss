@@ -1,0 +1,141 @@
+.header {
+  padding-bottom: 20px;
+  width: 100%;
+  height: 191.4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid rgba($color: gray, $alpha: 0.7);
+  .header__head-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba($color: gray, $alpha: 0.2);
+    .header__head {
+      width: 65%;
+      display: flex;
+      justify-content: space-between;
+      .head__column {
+        display: flex;
+        .head__column-item {
+          padding: 10px 0px;
+          font-size: 13px;
+          font-weight: bold;
+          color: rgba($color: gray, $alpha: 1);
+          span {
+            word-spacing: -3px;
+            &:not(.no__borderRight) {
+              border-right: 1px solid rgba($color: gray, $alpha: 0.4);
+            }
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          .melon__ticket {
+            @include hoverColor($melonColor);
+          }
+          .melon__talk {
+            @include hoverColor(#70d4c8);
+          }
+          &:first-child {
+            span {
+              padding-right: 15px;
+            }
+          }
+          &:nth-child(2) {
+            span:not(.melon__talk) {
+              padding: 0px 15px;
+            }
+          }
+          &:last-child {
+            padding-left: 15px;
+          }
+        }
+        &:nth-child(2) {
+          .head__column-item {
+            span {
+              @include hoverColor(#353b48);
+            }
+          }
+        }
+      }
+    }
+  }
+  .header__main {
+    width: 65%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    .header__search {
+      form {
+        width: 320px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid $melonColor;
+        border-radius: 20px;
+        input {
+          width: 250px;
+          border: none;
+        }
+        i {
+          margin-left: 10px;
+          font-size: 25px;
+          color: $melonColor;
+        }
+      }
+    }
+  }
+  .header__nav-box {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    .header__nav {
+      display: flex;
+      a:link {
+        text-decoration: none;
+      }
+      a:visited {
+        color: black;
+      }
+      .nav__item {
+        cursor: pointer;
+        font-weight: bold;
+        span {
+          @include hoverColor($melonColor);
+        }
+        .viewPlus {
+          position: relative;
+          padding: 15px;
+          margin-top: 20px;
+          width: 100px;
+          height: 100px;
+          background-color: white;
+          border-top: 1px solid rgba($color: gray, $alpha: 0.7);
+          border-right: 1px solid black;
+          border-left: 1px solid black;
+          border-bottom: 1px solid black;
+          span {
+            width: max-content;
+            &:first-child {
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+      &:first-child {
+        .nav__item {
+          margin-right: 30px;
+        }
+      }
+      &:nth-child(2) {
+        color: rgba($color: gray, $alpha: 0.5);
+        .myMusic {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+}

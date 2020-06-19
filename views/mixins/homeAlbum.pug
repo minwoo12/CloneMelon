@@ -1,0 +1,5 @@
+mixin homeAlbum(music={})
+    a(href=routes.musicDetail(music.id))
+        .homeAlbum
+            img.homeAlbum__image(src=`${music.fileUrl}`)
+            .homeAlbum__title=music.title

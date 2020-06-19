@@ -1,0 +1,7 @@
+extends ./layouts/adminMain
+
+block content
+    .adminAuth
+        form(action=`/admin${routes.adminAuth}`, method="post")
+            input(type="password", name="adminPassword", placeholder="Password")
+            input(type="submit", value="Join")

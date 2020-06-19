@@ -1,0 +1,13 @@
+mixin newestMainTitle
+    .sideMain__box
+        ul.sideMain__nav
+            a(href=`/music${routes.newest}`)
+                li.nav__item #{navtitle1}
+            a(href=`/music${routes.newestAlbum}`)    
+                li.nav__item #{navtitle2}
+            a(href=`/music${routes.newestVideo}`)
+                li.nav__item #{navtitle3}
+            li.nav__item #{navtitle4}
+            li.nav__item #{navtitle5}
+    .sideMain__title-box
+        .sideMain__title #{sideMainTitle}

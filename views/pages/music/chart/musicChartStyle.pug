@@ -1,0 +1,75 @@
+extends ../../../layouts/sideMain
+
+include ../../../mixins/chartBlock
+block content
+    .sideMain__box
+        ul.sideMain__nav
+            a(href=`/music${routes.chart}/rise/day`)
+                li.nav__item #{navtitle1}
+            a(href=`/music${routes.chartTrend}`)
+                li.nav__item #{navtitle3}
+            a(href=`/music${routes.chartStyle}`)
+                li.nav__item.click__nav #{navtitle4}
+    .sideMain__title-box
+        .sideMain__title #{sideMainTitle}
+    .chart__content-box
+        .chart__content
+            ul.chart__nav
+                | 작업중
+            ul.chart__button-nav
+                button 
+                    i.fas.fa-play
+                    | 전체 듣기
+                button
+                    i.fas.fa-play 
+                    | 듣기
+                button 
+                    i.fas.fa-plus
+                    | 담기
+                button
+                    i.fas.fa-download
+                    | 다운                    
+                button 
+                    i.fas.fa-download
+                    | FLAC
+                button
+                    i.fas.fa-gift
+                    | 선물
+            .chart__list
+                .chart__list-nav
+                    .nav__item
+                        input(type="checkbox", name="")
+                        -for(let i =1; i<=music.length; i++ )
+                            input(type="checkbox", name="")
+                    .nav__item NO
+                        -for(let i =1; i<=music.length; i++ )
+                            .number #{i}
+                    .nav__item 이미지
+                            each item in music
+                                +musicImageBlock({
+                                    image: item.image
+                                })
+                    .nav__item 곡정보
+                            each item in music
+                                +musicTitleBlock({
+                                    title: item.title
+                                })
+                    .nav__item 앨범
+                            each item in music
+                                +musicAlbumBlock({
+                                    album: item.description
+                                })
+                    .nav__item 좋아요
+                            each item in music
+                                +musicLikeBlock({
+                                    like: item.views
+                                })
+                    .nav__item 듣기
+                        -for(let i =1; i<=music.length; i++ )
+                            i.fas.fa-play
+                    .nav__item 담기
+                        -for(let i =1; i<=music.length; i++ )
+                            i.fas.fa-plus
+                    .nav__item 다운
+                        -for(let i =1; i<=music.length; i++ )
+                            i.fas.fa-file-download

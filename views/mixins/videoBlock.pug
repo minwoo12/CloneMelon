@@ -1,0 +1,7 @@
+mixin videoBlock(video={})
+    .videoBlock
+        video(src=video.fileUrl, controls=true)
+        .content__box
+            .title=video.title
+            .description=video.description
+            .artist=video.artist

@@ -1,0 +1,29 @@
+.sideMain__box {
+  margin-bottom: 50px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fcfcfc;
+  border-bottom: 1px solid $melonColor;
+  .sideMain__nav {
+    width: 65%;
+    display: flex;
+    a:link {
+      text-decoration: none;
+    }
+    .nav__item {
+      padding-right: 25px;
+      font-size: 15px;
+      font-weight: bold;
+      color: rgba($color: #000000, $alpha: 0.5);
+      &:hover {
+        color: $melonColor;
+      }
+    }
+    .click__nav {
+      color: $melonColor;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+extends ../../../layouts/sideMain.pug
+
+include ../../../mixins/videoBlock
+block content
+    .sideMain__box
+        ul.sideMain__nav
+            a(href=`/music${routes.newest}`)
+                li.nav__item #{navtitle1}
+            a(href=`/music${routes.newestVideo}`)
+                li.nav__item.click__nav #{navtitle3}
+    .sideMain__title-box
+        .sideMain__title #{sideMainTitle}
+    .chart__content-box
+        .chart__content
+            each item in videos
+                +videoBlock({
+                    fileUrl: item.fileUrl,
+                    title: item.title,
+                    description: item.description,
+                    artist: item.artist
+                })

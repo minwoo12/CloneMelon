@@ -1,0 +1,9 @@
+mixin genreMainTitle
+    .sideMain__box
+        ul.sideMain__nav
+            a(href=`/music${routes.genre}`)
+                li.nav__item #{navtitle1}
+            a(href=`/music${routes.genreAbroad}`)
+                li.nav__item #{navtitle2}
+    .sideMain__title-box
+        .sideMain__title #{sideMainTitle}

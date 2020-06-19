@@ -1,0 +1,104 @@
+extends ../../layouts/main
+
+include ../../mixins/homeAlbum
+include ../../mixins/homePopu
+include ../../mixins/chartBlock
+block content
+    main
+        .main__content
+            article.newestAlbum
+                .newestAlbum__column
+                    nav.newestAlbum__nav
+                        a(href=`/music${routes.newestAlbum}`).newestAlbum__title 최신 앨범 >
+                        .newestAlbum__left
+                            ul.newestAlbum__genre
+                                li.gener__item 전체
+                                li.gener__item 가요
+                                li.gener__item POP
+                                li.gener__item OST
+                                li.gener__item J-POP
+                            .newestAlbum__page
+                                .newestAlbum__page-num 1/16
+                                .newestAlbum__button 
+                                    i.far.fa-caret-square-left
+                                    i.far.fa-caret-square-right
+                    if newestMusic
+                        .newestAlbum__grid
+                            each album in newestMusic
+                                +homeAlbum({
+                                    id: album.id,
+                                    fileUrl: album.image,
+                                    title: album.title
+                                })
+                    else
+                        .newestAlbum__grid
+                .newestAlbum__column
+                    .post__button-nav
+                        span.post-i Poster
+                    .newestAlbum__post
+                        img(src="../images/album7.jpg", alt="")
+            article.HomeLogin
+                .loginBox
+                    if !loggedUser
+                        .loginBox-column
+                            span 멜론을 더 안전하게 이용하세요
+                            a(href=routes.sign).loginBox__sign 회원가입
+                        a(href=routes.loginForm).loginBox-column 로그인
+                    else 
+                        .loggedUser__column
+                            .loggedUserBox
+                                .loggedUser__SpeechBubble
+                                    img(src="../images/SpeechBubble.png", alt="")
+                                .loggedUser__nickname=kakaoUser.nickname
+                                    |님
+                                a(href=`/user${routes.me}`).loggedUser__myProfile 내정보
+                            a(href=routes.logout).loggedUser__logout 로그아웃
+                        .loggedUser__column
+                            ul
+                                li 프리클럽 사용중 >
+                            ul
+                                li 쿠폰 0
+                                li 캐시 0
+                                li 선물 0     
+            article.popularity
+                .popularity__box
+                    span.popularity__title 인기 있어요
+                .popularity__grid
+                    each album in music
+                        +homePopu({
+                            id: album.id,
+                            image: album.image,
+                            title: album.title,
+                            description: album.description,
+                            genres: album.genres,
+                            createdAt: album.views
+                        })
+            article.realtime__chart
+                    .chart__title
+                        a(href=`/music${routes.chart}`).chart__title-melon 멜론 차트 >
+                    .chartBox
+                        nav.chartBox__category
+                            .category__item 일간
+                        nav.chartBox__list
+                            if newestMusic
+                                .nav__item
+                                    -for(let i =1; i<11; i++)
+                                        .num #{i}
+                                .nav__item
+                                    each item in newestMusic
+                                        +musicTitleBlock({
+                                            title: item.title
+                                        })
+                                .nav__item
+                                    each item in newestMusic
+                                        +musicDesBlock({
+                                            description: item.artist
+                                        })
+                            else
+                                .nav__item
+        .notice
+            .notice__title
+                | 공지사항
+            .notice__content
+            .notice__time              
+                

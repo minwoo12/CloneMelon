@@ -1,0 +1,8 @@
+mixin homePopu(album={})
+    .homePopu
+        a(href=routes.musicDetail(album.id))
+            img.homePopu__image(src=album.image, alt=album.title)
+            .homePopu__title=album.title
+        .homePopu__description=album.description
+        .homePopu__genres=album.genres
+        .homePopu__createdAt=album.createdAt

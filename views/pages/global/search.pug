@@ -1,0 +1,14 @@
+extends ../../layouts/main
+
+include ../../mixins/searchMusic
+block content
+    if music
+        .search__musics
+            each item in music
+                +searchMusic({
+                    id: item.id,
+                    fileUrl: item.image,
+                    title: item.title
+                })
+    else 
+        | Not Found Searching about #{term}

@@ -1,0 +1,8 @@
+mixin searchMusic(music={})
+    .searchMusic__box
+        a(href=routes.musicDetail(music.id))
+            img(src=music.fileUrl, alt=music.title)
+        .content__box
+            .title=music.title
+            .description=music.description
+            .artist=music.artist

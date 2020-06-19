@@ -1,0 +1,76 @@
+extends ../../../layouts/sideMain
+
+include ../../../mixins/homeAlbum
+include ../../../mixins/homePopu
+include ../../../mixins/chartBlock
+block content
+    .sideMain__box
+        ul.sideMain__nav
+            a(href=`/music${routes.genre}`)
+                li.nav__item.click__nav #{navtitle1}
+            a(href=`/music${routes.genreAbroad}`)
+                li.nav__item #{navtitle2}
+    .sideMain__title-box
+        .sideMain__title #{sideMainTitle}
+    .chart__content-box
+        .chart__content
+            ul.chart__nav
+                a(href=`/music${routes.genre}`).nav__item.click__first__nav 발라드
+                a(href=`/music${routes.genreKoreaDance}`).nav__item 댄스
+                a(href=`/music${routes.genreKoreaRap}`).nav__item 랩/힙합
+                a(href=`/music${routes.genreKoreaSoul}`).nav__item R&B/Soul
+            ul.chart__button-nav
+                button
+                    i.fas.fa-play 
+                    | 듣기
+                button 
+                    i.fas.fa-plus
+                    | 담기
+                button
+                    i.fas.fa-download
+                    | 다운                    
+                button 
+                    i.fas.fa-download
+                    | FLAC
+                button
+                    i.fas.fa-gift
+                    | 선물
+            .chart__list
+                ul.chart__list-nav
+                    .nav__item
+                        input(type="checkbox", name="")
+                        -for(let i =1; i<=music.length; i++ )
+                            input(type="checkbox", name="")
+                    .nav__item NO
+                        -for(let i =1; i<=music.length; i++ )
+                            .number #{i}
+                    .nav__item 이미지
+                            each item in music
+                                +musicImageBlock({
+                                    image: item.image
+                                })
+                    .nav__item 곡정보
+                            each item in music
+                                +musicTitleBlock({
+                                    title: item.title
+                                })
+                    .nav__item 앨범
+                            each item in music
+                                +musicAlbumBlock({
+                                    album: item.description
+                                })
+                    .nav__item 조회수
+                            each item in music
+                                +musicLikeBlock({
+                                    like: item.views
+                                })
+                    .nav__item 듣기
+                        -for(let i =1; i<=music.length; i++ )
+                            i.fas.fa-play
+                    .nav__item 담기
+                        -for(let i =1; i<=music.length; i++ )
+                            i.fas.fa-plus
+                    .nav__item 다운
+                        -for(let i =1; i<=music.length; i++ )
+                            i.fas.fa-file-download
+                .chart__list-page 1 - 50위 | 51 - 100위

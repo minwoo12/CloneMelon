@@ -1,0 +1,30 @@
+.sideLogin
+    if !loggedUser
+        .sign__box
+            a(href=routes.sign).sign__box-span 회원가입
+        a(href=routes.loginForm).sideLogin__loginBox 로그인
+        ul.sign__list
+            li.sign__item 
+                span 멜론 이용권구매
+                i.fas.fa-ticket-alt
+            li.sign__item 
+                span 멜론캐시 충전
+                i.fas.fa-coins
+            li.sign__item 
+                span 멜론 플레이어
+                i.fas.fa-video
+            li.sign__item 
+                span 고객지원
+                i.fas.fa-info-circle
+    else
+        .sideLogin__user-box
+            .sideLogin__box
+                .sideLogin__box-column
+                    img(src="../../images/SpeechBubble.png", alt="")
+                    .sideLogin__nickname=loggedUser.dataValues.nickname
+                    .sideLogin__nickname-sub 님
+                .sideLogin__box-column
+                    .sideLogin__upButton △
+            .sideLogin__user
+                a(href=`/user${routes.me}`).sideLogin__profile 내정보
+                a(href=routes.logout).sideLogin__logout 로그아웃

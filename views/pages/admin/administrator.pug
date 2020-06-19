@@ -1,0 +1,13 @@
+extends ./layouts/adminMain
+
+block content
+    .adminMain__box
+        aside.admin__menu-nav
+            a(href=`/admin${routes.adminStat}`).nav__item 대시보드<br>
+            a(href=`/admin${routes.musicUpload}`).nav__item 음악 업로드<br>
+            a(href=`/admin${routes.videoUpload}`).nav__item 비디오 업로드
+        header.admin__header
+            a(href=routes.home)
+                .header__logo Home
+            a(href=`/admin/${routes.adminAuth}`)
+                .header__exit 나가기

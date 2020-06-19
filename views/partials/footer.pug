@@ -1,0 +1,30 @@
+footer
+    .footer__nav-box
+        ul.footer__nav
+            li.nav__item 멜론5.0 둘러보기
+            li.nav__item Windows 플레이어
+            li.nav__item Mac 플레이어
+            li.nav__item iPad
+            li.nav__item 고객센터
+            if loggedUser && loggedUser.dataValues.email
+                a(href=`/admin${routes.adminAuth}`).nav__item 관리자 페이지
+    .footerBox
+        ul.footerBox__nav
+            li.nav__item 회사소개
+            li.nav__item 이용약관
+            li.nav__item 위치기반서비스 이용약관
+            li.nav__item 개인정보처리방침
+            li.nav__item 청소년보호정책
+            li.nav__item 제휴/프로모션문의
+            li.nav__item 이메일주소무단수집거부
+            li.nav__item 파트너센터
+        ul.footerBox__nav
+            li.nav__item ㈜카카오 제주특별자치도 제주시 첨단로 242 (영평도)
+            li.nav__item 공동대표이사: 여민수, 조수용
+            li.nav__item 사업자등록번호: 120-81-47521
+            li.nav__item 통신판매신고번호: 제 2015-제주아리-0032호 사업자정보확인 >
+        ul.footerBox__nav
+            li.nav__item 문의전화 : 1566-7727 (평일 09:00 - 18:00, 유료)
+            li.nav__item 이메일
+            li.nav__item 호스팅서비스사업자
+            li.nav__item &copy Kakao Corp. 

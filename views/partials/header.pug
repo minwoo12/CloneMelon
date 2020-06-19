@@ -1,0 +1,42 @@
+header.header
+    .header__head-box
+        .header__head
+            ul.head__column
+                li.head__column-item 
+                    span.melon__ticket 멜론 티켓
+                li.head__column-item 
+                    span.no__borderRight.melon__talk 멜론 아지톡
+            ul.head__column
+                li.head__column-item 
+                    span 이용권구매
+                li.head__column-item 
+                    span VIP혜택관
+                li.head__column-item 
+                    span.no__borderRight 이벤트
+    .header__main
+        .header__logo
+            a(href=routes.home)
+                img(src="../../images/Logo.png", alt="Melon 로고 - 홈으로 이동")
+        .header__search
+            form(action=routes.search, method="get")
+                input(type="text", name="term", placeholder="사랑의 설렘과 달콤함! 트와이스 More&More")
+                i.fas.fa-search
+    .header__nav-box
+        ul.header__nav
+            a(href=`/music${routes.chart}/rise/day`)
+                li.nav__item 
+                    span 멜론차트
+            a(href=`/music${routes.newest}`)
+                li.nav__item 
+                    span 최신
+            a(href=`/music${routes.genre}`)    
+                li.nav__item 
+                    span 장르
+            li.nav__item#jsViewPlus 
+                span 더보기▼
+                .viewPlus.hide#jsViewPlusModal
+                    span 어학
+                    span 공지사항
+        ul.header__nav
+            a(href=`/user${routes.myMusic}`).nav__item.myMusic 마이뮤직
+            li.nav__item 피드

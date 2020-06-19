@@ -1,0 +1,17 @@
+mixin musicImageBlock(music={})
+    a(href=routes.musicDetail(music.id))
+        img(src=music.image, alt="")
+
+mixin musicTitleBlock(music={})
+    a(href=routes.musicDetail(music.id))
+        .title=music.title
+
+mixin musicAlbumBlock(music={})
+    .album=music.album
+
+mixin musicDesBlock(music={})
+    .description=music.description
+
+mixin musicLikeBlock(music={})
+    .like=music.like
+
