@@ -1,0 +1,14 @@
+extends ../../layouts/signMain.pug
+
+include ../../mixins/musicBlock
+block content
+    .musicDetail__container
+        +musicBlock({
+            image: musics.image,
+            fileUrl: musics.fileUrl,
+            title: musics.title,
+            genre: musics.genre,
+            description: musics.description,
+            views: musics.views,
+            artist: musics.artist,
+        })

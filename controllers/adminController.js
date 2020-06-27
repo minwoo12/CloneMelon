@@ -7,11 +7,29 @@ const date = new Date().getDate();
 const today = new Date(year, month, date).getTime();
 
 export const admin = (req, res) => {
-  res.render("./pages/admin/administrator");
+  const {
+    user: { dataValues: kakao }
+  } = req;
+  try {
+    if (kakao.email === "fhghzl112@naver.com") {
+      res.render("./pages/admin/administrator");
+    }
+  } catch (error) {
+    res.redirect(routes.home);
+  }
 };
 
 export const adminAuth = (req, res) => {
-  res.render("./pages/admin/adminAuth");
+  const {
+    user: { dataValues: kakao }
+  } = req;
+  try {
+    if (kakao.email === "fhghzl112@naver.com") {
+      res.render("./pages/admin/adminAuth");
+    }
+  } catch (error) {
+    res.redirect(routes.home);
+  }
 };
 
 export const postAdminAuth = (req, res) => {
@@ -29,12 +47,35 @@ export const postAdminAuth = (req, res) => {
   }
 };
 
-export const adminStat = (req, res) => {
-  res.render("./pages/admin/adminStat");
+export const adminStat = async (req, res) => {
+  const {
+    user: { dataValues: kakao }
+  } = req;
+  try {
+    let music = [];
+    const musics = await Music.findAll({});
+    const videos = await Video.findAll({});
+    musics.forEach(item => music.push(item.dataValues));
+    if (kakao.email === "fhghzl112@naver.com") {
+      res.render("./pages/admin/adminStat", { music, videos });
+    }
+  } catch (error) {
+    console.log(error);
+    res.redirect(routes.home);
+  }
 };
 
 export const musicUpload = (req, res) => {
-  res.render("./pages/admin/musicUpload");
+  const {
+    user: { dataValues: kakao }
+  } = req;
+  try {
+    if (kakao.email === "fhghzl112@naver.com") {
+      res.render("./pages/admin/musicUpload");
+    }
+  } catch (error) {
+    res.redirect(routes.home);
+  }
 };
 
 export const postMusicUpload = async (req, res) => {
@@ -62,7 +103,16 @@ export const postMusicUpload = async (req, res) => {
 };
 
 export const videoUpload = (req, res) => {
-  res.render("./pages/admin/videoUpload");
+  const {
+    user: { dataValues: kakao }
+  } = req;
+  try {
+    if (kakao.email === "fhghzl112@naver.com") {
+      res.render("./pages/admin/videoUpload");
+    }
+  } catch (error) {
+    res.redirect(routes.home);
+  }
 };
 
 export const postVideoUpload = async (req, res) => {

@@ -39,42 +39,45 @@ block content
                     | 선물
             .chart__list
                 .chart__list-nav
-                    if musicTime <= newMonth && musicTime >= lastMonth
-                        .nav__item
-                            input(type="checkbox", name="")
-                            -for(let i =1; i<=music.length; i++ )
-                                input(type="checkbox", name="")
-                        .nav__item NO
-                            -for(let i =1; i<=music.length; i++ )
-                                .number #{i}
-                        .nav__item 이미지
-                                each item in music
+                    .nav__item
+                        input(type="checkbox", name="")
+                        -for(let i =1; i<=music.length; i++ )
+                             input(type="checkbox", name="")
+                    .nav__item NO
+                        -for(let i =1; i<=music.length; i++ )
+                            .number #{i}
+                    .nav__item 이미지
+                            each item in music
+                                if item.time <= newMonth && item.time >= lastMonth
                                     +musicImageBlock({
+                                        id: item.id,
                                         image: item.image
                                     })
-                        .nav__item 곡정보
-                                each item in music
+                    .nav__item 곡정보
+                            each item in music
+                                if item.time <= newMonth && item.time >= lastMonth
                                     +musicTitleBlock({
+                                        id: item.id,
                                         title: item.title
                                     })
-                        .nav__item 앨범
-                                each item in music
+                    .nav__item 앨범
+                            each item in music
+                                if item.time <= newMonth && item.time >= lastMonth
                                     +musicAlbumBlock({
                                         album: item.description
                                     })
-                        .nav__item 좋아요
-                                each item in music
+                    .nav__item 좋아요
+                            each item in music
+                                if item.time <= newMonth && item.time >= lastMonth
                                     +musicLikeBlock({
                                         like: item.views
                                     })
-                        .nav__item 듣기
-                            -for(let i =1; i<=music.length; i++ )
-                                i.fas.fa-play
-                        .nav__item 담기
-                            -for(let i =1; i<=music.length; i++ )
-                                i.fas.fa-plus
-                        .nav__item 다운
-                            -for(let i =1; i<=music.length; i++ )
-                                i.fas.fa-file-download
-                    else
-                        | Not Found
+                    .nav__item 듣기
+                        -for(let i =1; i<=music.length; i++ )
+                            i.fas.fa-play
+                    .nav__item 담기
+                        -for(let i =1; i<=music.length; i++ )
+                            i.fas.fa-plus
+                    .nav__item 다운
+                        -for(let i =1; i<=music.length; i++ )
+                            i.fas.fa-file-download

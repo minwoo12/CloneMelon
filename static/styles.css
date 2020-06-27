@@ -427,6 +427,63 @@ footer {
     .nav__item a .title:visited {
       color: black; }
 
+.flash-message__container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .flash-message__container .flash-message__box {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    font-weight: bold;
+    border: 2px solid #3498db;
+    border-radius: 10px; }
+    .flash-message__container .flash-message__box a button {
+      margin-left: 10px;
+      color: white;
+      background-color: #74b9ff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer; }
+      .flash-message__container .flash-message__box a button:focus {
+        outline: none; }
+      .flash-message__container .flash-message__box a button:hover {
+        background-color: #0984e3; }
+
+.flash-message__layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.musicDetail__container {
+  padding: 50px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .musicDetail__container img {
+    margin-bottom: 20px;
+    width: 600px; }
+  .musicDetail__container .musicBlock__box {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; }
+    .musicDetail__container .musicBlock__box audio {
+      margin-bottom: 20px; }
+    .musicDetail__container .musicBlock__box div {
+      margin-bottom: 10px; }
+
 main {
   width: 100%;
   display: flex;
@@ -448,35 +505,38 @@ main {
         text-decoration: none; }
       main .main__content .newestAlbum a:visited {
         color: rgba(0, 0, 0, 0.8); }
-      main .main__content .newestAlbum .newestAlbum__column:first-child .newestAlbum__nav {
-        margin-bottom: 10px;
-        height: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center; }
-        main .main__content .newestAlbum .newestAlbum__column:first-child .newestAlbum__nav .newestAlbum__title {
-          font-weight: bold; }
-        main .main__content .newestAlbum .newestAlbum__column:first-child .newestAlbum__nav .newestAlbum__left {
-          display: flex; }
-          main .main__content .newestAlbum .newestAlbum__column:first-child .newestAlbum__nav .newestAlbum__left .newestAlbum__genre {
-            display: flex;
-            font-size: 13px; }
-            main .main__content .newestAlbum .newestAlbum__column:first-child .newestAlbum__nav .newestAlbum__left .newestAlbum__genre li {
-              padding: 0px 5px;
-              color: gray;
-              font-weight: bold; }
-              main .main__content .newestAlbum .newestAlbum__column:first-child .newestAlbum__nav .newestAlbum__left .newestAlbum__genre li:not(:last-child) {
-                border-right: 1px solid rgba(128, 128, 128, 0.5); }
-          main .main__content .newestAlbum .newestAlbum__column:first-child .newestAlbum__nav .newestAlbum__left .newestAlbum__page {
-            margin-left: 15px;
+      main .main__content .newestAlbum .newestAlbum__column:first-child {
+        min-width: 450px; }
+        main .main__content .newestAlbum .newestAlbum__column:first-child .newestAlbum__nav {
+          margin-bottom: 10px;
+          height: 20px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center; }
+          main .main__content .newestAlbum .newestAlbum__column:first-child .newestAlbum__nav .newestAlbum__title {
+            font-weight: bold; }
+          main .main__content .newestAlbum .newestAlbum__column:first-child .newestAlbum__nav .newestAlbum__left {
             display: flex; }
-      main .main__content .newestAlbum .newestAlbum__column:first-child .newestAlbum__grid {
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 130px 130px;
-        gap: 10px; }
+            main .main__content .newestAlbum .newestAlbum__column:first-child .newestAlbum__nav .newestAlbum__left .newestAlbum__genre {
+              display: flex;
+              font-size: 13px; }
+              main .main__content .newestAlbum .newestAlbum__column:first-child .newestAlbum__nav .newestAlbum__left .newestAlbum__genre li {
+                padding: 0px 5px;
+                color: gray;
+                font-weight: bold; }
+                main .main__content .newestAlbum .newestAlbum__column:first-child .newestAlbum__nav .newestAlbum__left .newestAlbum__genre li:not(:last-child) {
+                  border-right: 1px solid rgba(128, 128, 128, 0.5); }
+            main .main__content .newestAlbum .newestAlbum__column:first-child .newestAlbum__nav .newestAlbum__left .newestAlbum__page {
+              margin-left: 15px;
+              display: flex; }
+        main .main__content .newestAlbum .newestAlbum__column:first-child .newestAlbum__grid {
+          height: 100%;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: 130px 130px;
+          gap: 10px; }
       main .main__content .newestAlbum .newestAlbum__column:nth-child(2) {
+        min-width: 230px;
         height: 270px; }
         main .main__content .newestAlbum .newestAlbum__column:nth-child(2) .post__button-nav {
           margin-bottom: 10px;
@@ -494,6 +554,7 @@ main {
     main .main__content .HomeLogin {
       margin-top: 30px; }
       main .main__content .HomeLogin .loginBox {
+        min-width: 280px;
         height: 100px;
         display: flex;
         flex-direction: column;
@@ -641,6 +702,7 @@ main {
   .chart__content-box .chart__content {
     margin-top: 20px;
     width: 65%;
+    min-width: 850px;
     display: flex;
     flex-direction: column; }
     .chart__content-box .chart__content .chart__nav {
@@ -772,6 +834,12 @@ main {
   .adminMain__box .admin__header {
     width: 80%; }
 
+.adminStat__container .homeAlbum img {
+  width: 200px; }
+
+.adminStat__container .videoBlock video {
+  width: 200px; }
+
 .search__musics {
   display: flex;
   justify-content: center; }
@@ -886,14 +954,59 @@ main {
   justify-content: center; }
   .video__content-box .video__content {
     width: 65%;
+    min-width: 850px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-between; }
     .video__content-box .video__content .videoBlock {
+      margin-bottom: 20px;
       display: flex; }
       .video__content-box .video__content .videoBlock video {
         margin-right: 20px;
         width: 250px; }
+
+.userMe__box {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+  .userMe__box .user__me {
+    width: 65%; }
+    .userMe__box .user__me .user__profile {
+      margin-bottom: 20px; }
+      .userMe__box .user__me .user__profile .user__information {
+        margin-right: 20px;
+        font-size: 25px; }
+      .userMe__box .user__me .user__profile .user__id {
+        color: rgba(128, 128, 128, 0.8);
+        font-size: 15px; }
+    .userMe__box .user__me .user__profile-box {
+      padding: 30px;
+      border: 1px solid rgba(128, 128, 128, 0.5); }
+      .userMe__box .user__me .user__profile-box .user__edit {
+        margin: 30px 0px;
+        font-size: 25px; }
+      .userMe__box .user__me .user__profile-box .user__edit-box {
+        display: flex;
+        align-items: center; }
+        .userMe__box .user__me .user__profile-box .user__edit-box .edit-box__column {
+          width: 50%;
+          display: flex;
+          justify-content: space-between; }
+          .userMe__box .user__me .user__profile-box .user__edit-box .edit-box__column .user__name {
+            font-size: 18px;
+            color: #00cd3c; }
+          .userMe__box .user__me .user__profile-box .user__edit-box .edit-box__column .name__change {
+            color: rgba(128, 128, 128, 0.8);
+            font-size: 14px; }
+          .userMe__box .user__me .user__profile-box .user__edit-box .edit-box__column .confirm__kakao2 {
+            color: #00cd3c;
+            font-size: 14px; }
+          .userMe__box .user__me .user__profile-box .user__edit-box .edit-box__column:first-child {
+            padding-right: 20px;
+            border-right: 1px solid rgba(128, 128, 128, 0.5); }
+          .userMe__box .user__me .user__profile-box .user__edit-box .edit-box__column:nth-child(2) {
+            margin-left: 20px; }
 
 html,
 body {

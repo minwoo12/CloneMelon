@@ -12,10 +12,6 @@ const nineClock = new Date(year, month, date, 18);
 const realTime2 = new Date(year, month, date, 12);
 const realTime3 = new Date(year, month, date, 25);
 const realTime4 = new Date(year, month, date, 2);
-console.log(nineClock);
-console.log(realTime2);
-console.log(realTime3);
-console.log(realTime4);
 
 export const localMiddleware = (req, res, next) => {
   res.locals.routes = routes;
@@ -24,5 +20,21 @@ export const localMiddleware = (req, res, next) => {
   next();
 };
 
+export const onlyPrivate = (req, res, next) => {
+  if (req.user) {
+    next();
+  } else {
+    res.redirect(routes.home);
+  }
+};
+
+export const onlyPublic = (req, res, next) => {
+  if (req.user) {
+    res.redirect(routes.home);
+  } else {
+    next();
+  }
+};
+
 export const uploadMusic = multerMusic.array("musicFile", 2);
-export const uploadVideo = multerMusic.single("videoFile");
+export const uploadVideo = multerVideo.single("videoFile");

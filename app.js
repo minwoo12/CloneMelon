@@ -5,6 +5,7 @@ import { localMiddleware } from "./middleware";
 import passport from "passport";
 import session from "express-session";
 import MySQLStore from "express-mysql-session";
+import flash from "express-flash";
 import helmet from "helmet";
 import logger from "morgan";
 import bodyParser from "body-parser";
@@ -26,12 +27,14 @@ app.use("/images", express.static("images"));
 app.use("/music/images", express.static("images"));
 app.use("/music/chart/images", express.static("images"));
 app.use("/uploads", express.static("uploads"));
+app.use("/music/uploads", express.static("uploads"));
 app.use("/music/chart/uploads", express.static("uploads"));
 app.use("/music/newest/uploads", express.static("uploads"));
 app.use("/music/genre/uploads", express.static("uploads"));
 app.use("/music/genre/korea/uploads", express.static("uploads"));
 app.use("/music/chart/top/uploads", express.static("uploads"));
 app.use("/music/chart/top/rise/uploads", express.static("uploads"));
+app.use("/admin/uploads", express.static("uploads"));
 app.use(logger("dev"));
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -50,6 +53,7 @@ app.use(
     })
   })
 );
+app.use(flash());
 
 app.use(passport.initialize());
 app.use(passport.session());

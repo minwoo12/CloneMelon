@@ -17,6 +17,7 @@
   .chart__content {
     margin-top: 20px;
     width: 65%;
+    min-width: 850px;
     display: flex;
     flex-direction: column;
     .chart__nav {

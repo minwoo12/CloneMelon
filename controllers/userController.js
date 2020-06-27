@@ -10,7 +10,16 @@ export const me = async (req, res) => {
 };
 
 export const myMusic = (req, res) => {
-  res.render("myMusic");
+  try {
+    if (req.user) {
+      req.flash("work", "작업중입니다.");
+      res.render("myMusic");
+    } else {
+      res.redirect(routes.loginForm);
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const kakaoLogin = passport.authenticate("kakao");

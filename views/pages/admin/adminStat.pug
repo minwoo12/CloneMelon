@@ -1,0 +1,18 @@
+extends ../../layouts/adminMain
+
+include ../../mixins/homeAlbum
+include ../../mixins/videoBlock
+block content
+    .adminStat__container
+        each m in music
+            +homeAlbum({
+                id: m.id,
+                fileUrl: m.image,
+                title: m.title
+            })
+        each v in videos
+            +videoBlock({
+                id: v.id,
+                fileUrl: v.fileUrl,
+                title: v.title
+            })

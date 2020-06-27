@@ -1,11 +1,18 @@
 extends ./layouts/main
 
 block content
-    .user__me
-        .user__profile
-            span.user__information 내 정보
-            span.user__id 로그인계정: #{myUser.email}
-        .user__profile-box
-            span.user__edit 멜론 정보수정 
-            span.user__name=myUser.nickname
-            span.name__change 닉네임 변경 >
+    .userMe__box
+        .user__me
+            .user__profile
+                span.user__information 내 정보
+                span.user__id 로그인계정: #{myUser.email}
+            .user__profile-box
+                .user__edit 멜론 정보수정
+                .user__edit-box
+                    .edit-box__column
+                        span.user__name=myUser.nickname
+                        span.name__change 닉네임 변경 >
+                    .edit-box__column
+                        span.confirm__kakao 카카오계정
+                        if loggedUser
+                            span.confirm__kakao2 연결됨 >

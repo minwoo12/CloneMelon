@@ -49,6 +49,7 @@ export const musicChartTopMonthRise = async (req, res) => {
   const musics = await Music.findAll({});
   let music = [];
   musics.forEach(item => music.push(item.dataValues));
+  console.log(music.time);
   let musicTime = [];
   musics.forEach(item => musicTime.push(item.dataValues.time));
   res.render("./pages/music/chart/musicChartRiseMonth", {

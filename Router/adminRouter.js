@@ -10,24 +10,24 @@ import {
   videoUpload,
   postVideoUpload
 } from "../controllers/adminController";
-import { uploadMusic, uploadVideo } from "../middleware";
+import { uploadMusic, uploadVideo, onlyPrivate } from "../middleware";
 
 const adminRouter = express.Router();
 
-adminRouter.get(routes.home, admin);
+adminRouter.get(routes.home, onlyPrivate, admin);
 
-adminRouter.get(routes.adminAuth, adminAuth);
+adminRouter.get(routes.adminAuth, onlyPrivate, adminAuth);
 
-adminRouter.post(routes.adminAuth, postAdminAuth);
+adminRouter.post(routes.adminAuth, onlyPrivate, postAdminAuth);
 
-adminRouter.get(routes.adminStat, adminStat);
+adminRouter.get(routes.adminStat, onlyPrivate, adminStat);
 
-adminRouter.get(routes.musicUpload, musicUpload);
+adminRouter.get(routes.musicUpload, onlyPrivate, musicUpload);
 
-adminRouter.post(routes.musicUpload, uploadMusic, postMusicUpload);
+adminRouter.post(routes.musicUpload, onlyPrivate, uploadMusic, postMusicUpload);
 
-adminRouter.get(routes.videoUpload, videoUpload);
+adminRouter.get(routes.videoUpload, onlyPrivate, videoUpload);
 
-adminRouter.post(routes.videoUpload, uploadVideo, postVideoUpload);
+adminRouter.post(routes.videoUpload, onlyPrivate, uploadVideo, postVideoUpload);
 
 export default adminRouter;

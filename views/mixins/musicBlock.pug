@@ -1,0 +1,9 @@
+mixin musicBlock(music={})
+    img(src=music.image)
+    .musicBlock__box
+        audio(src=music.fileUrl, controls=true)
+        .music-title 제목 : #{music.title}
+        .music-genre 장르 : #{music.genre}
+        .music-description 설명 : #{music.description}
+        .music-views 조회수 : #{music.views}
+        .music-artist 아티스트 : #{music.artist}

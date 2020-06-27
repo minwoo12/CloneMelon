@@ -14,15 +14,19 @@
 @import "./mixins/homePopu.scss";
 @import "./mixins/sideMainTitle";
 @import "./mixins/chartBlock.scss";
+@import "./mixins/messages.scss";
+@import "./mixins/musicBlock.scss";
 
 @import "./pages/home.scss";
 @import "./pages/musicChart.scss";
 @import "./pages/adminAuth.scss";
 @import "./pages/administrator.scss";
+@import "./pages/adminStat.scss";
 @import "./pages/search.scss";
 @import "./pages/sign.scss";
 @import "./pages/loginForm.scss";
 @import "./pages/newestVideo.scss";
+@import "./pages/me.scss";
 
 html,
 body {

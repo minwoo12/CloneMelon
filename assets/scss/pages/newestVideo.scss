@@ -5,10 +5,12 @@
   justify-content: center;
   .video__content {
     width: 65%;
+    min-width: 850px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
     .videoBlock {
+      margin-bottom: 20px;
       display: flex;
       video {
         margin-right: 20px;

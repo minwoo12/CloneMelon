@@ -1,0 +1,7 @@
+mixin messages(message={})
+    .flash-message__container
+        .flash-message__box(class=message.type)
+            span.flash-message__text=message.text
+            a(href=routes.home)
+                button.message__button 확인
+    .flash-message__layer

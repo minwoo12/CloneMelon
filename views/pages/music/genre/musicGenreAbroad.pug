@@ -1,1 +1,9 @@
-| 작업중
+extends ../../../layouts/signMain
+
+include ../../../mixins/message
+
+block content
+    +messages({
+        type: "work", 
+        text: messages.work
+    })

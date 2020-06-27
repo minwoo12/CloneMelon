@@ -1,5 +1,9 @@
-extends ./layouts/main
+extends ./layouts/signMain
+
+include ./mixins/message
 
 block content
-    .myMusic__box
-        
+    +messages({
+        type: "work", 
+        text: messages.work
+    })

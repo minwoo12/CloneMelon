@@ -1,0 +1,56 @@
+.userMe__box {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .user__me {
+    width: 65%;
+    .user__profile {
+      margin-bottom: 20px;
+      .user__information {
+        margin-right: 20px;
+        font-size: 25px;
+      }
+      .user__id {
+        color: rgba($color: gray, $alpha: 0.8);
+        font-size: 15px;
+      }
+    }
+    .user__profile-box {
+      padding: 30px;
+      border: 1px solid rgba($color: gray, $alpha: 0.5);
+      .user__edit {
+        margin: 30px 0px;
+        font-size: 25px;
+      }
+      .user__edit-box {
+        display: flex;
+        align-items: center;
+        .edit-box__column {
+          width: 50%;
+          display: flex;
+          justify-content: space-between;
+          .user__name {
+            font-size: 18px;
+            color: $melonColor;
+          }
+          .name__change {
+            color: rgba($color: gray, $alpha: 0.8);
+            font-size: 14px;
+          }
+          .confirm__kakao2 {
+            color: $melonColor;
+            font-size: 14px;
+          }
+          &:first-child {
+            padding-right: 20px;
+            border-right: 1px solid rgba($color: gray, $alpha: 0.5);
+          }
+          &:nth-child(2) {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+}

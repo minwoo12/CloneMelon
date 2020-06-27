@@ -7,7 +7,6 @@ const today = new Date(year, month, date).getTime();
 
 const ChartNavTitle = {
   t1: "멜론TOP100",
-  t2: "주간 인기상",
   t3: "트렌드차트",
   t4: "스타일 차트"
 };
@@ -24,9 +23,9 @@ const genreNavTitle = {
 };
 
 export const musicChartTrend = (req, res) => {
+  req.flash("work", "작업중입니다.");
   res.render("./pages/music/chart/musicChartTrend", {
     navtitle1: ChartNavTitle.t1,
-    navtitle2: ChartNavTitle.t2,
     navtitle3: ChartNavTitle.t3,
     navtitle4: ChartNavTitle.t4,
     sideMainTitle: "트렌드차트"
@@ -34,12 +33,12 @@ export const musicChartTrend = (req, res) => {
 };
 
 export const musicChartStyle = async (req, res) => {
+  req.flash("work", "작업중입니다.");
   const musics = await Music.findAll({});
   let music = [];
   musics.forEach(item => music.push(item.dataValues));
   res.render("./pages/music/chart/musicChartStyle", {
     navtitle1: ChartNavTitle.t1,
-    navtitle2: ChartNavTitle.t2,
     navtitle3: ChartNavTitle.t3,
     navtitle4: ChartNavTitle.t4,
     sideMainTitle: "스타일 차트",
@@ -54,7 +53,6 @@ export const newest = async (req, res) => {
   const newestMusic = await Music.findAll({ where: { time: String(today) } });
   res.render("./pages/music/newest/musicNewest", {
     navtitle1: newestNavTitle.t1,
-    navtitle2: newestNavTitle.t2,
     navtitle3: newestNavTitle.t3,
     navtitle4: newestNavTitle.t4,
     sideMainTitle: "최신곡",
@@ -67,7 +65,6 @@ export const newestVideo = async (req, res) => {
   const videos = await Video.findAll({});
   res.render("./pages/music/newest/musicNewestVideo", {
     navtitle1: newestNavTitle.t1,
-    navtitle2: newestNavTitle.t2,
     navtitle3: newestNavTitle.t3,
     navtitle4: newestNavTitle.t4,
     sideMainTitle: "최신 뮤직비디오",
@@ -116,6 +113,7 @@ export const genreKoreaSoul = async (req, res) => {
 };
 
 export const genreAbroad = (req, res) => {
+  req.flash("work", "작업중입니다.");
   res.render("./pages/music/genre/musicGenreAbroad", {
     navtitle1: genreNavTitle.t1,
     navtitle2: genreNavTitle.t2,
@@ -129,16 +127,13 @@ export const musicDetail = async (req, res) => {
   } = req;
   try {
     const music = await Music.findOne({ where: { id } });
+    const musics = music.dataValues;
     await Music.update(
       { views: music.dataValues.views + 1 },
       { where: { id } }
     );
-    res.status(200);
-    res.render("./pages/music/musicDetail", music);
+    res.render("./pages/music/musicDetail", { musics });
   } catch (error) {
     console.log(error);
-    res.status(400);
-  } finally {
-    res.end();
   }
 };
