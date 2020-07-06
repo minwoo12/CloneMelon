@@ -10,6 +10,8 @@ import helmet from "helmet";
 import logger from "morgan";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
+import dotenv from "dotenv";
+dotenv.config();
 
 import "./passport";
 import musicRouter from "./Router/musicRouter";
@@ -41,14 +43,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   session({
-    secret: "R31d0PmxTL8MXyB7ioNx3OHHwqGjMbMP",
+    secret: process.env.STORE_SECRET,
     resave: true,
     saveUninitialized: false,
     store: new CokieStore({
       host: "localhost",
       port: 3306,
       user: "root",
-      password: "1111",
+      password: process.env.DB_PASSWORD,
       database: "test"
     })
   })

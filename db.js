@@ -1,7 +1,9 @@
 import { Sequelize, DataTypes } from "sequelize";
 import passportLocalSequelize from "passport-local-sequelize";
+import dotenv from "dotenv";
+dotenv.config();
 
-const sequelize = new Sequelize("test", "root", "1111", {
+const sequelize = new Sequelize("test", "root", process.env.DB_PASSWORD, {
   host: "localhost",
   dialect: "mysql",
   logging: false
