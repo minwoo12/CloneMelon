@@ -8,10 +8,6 @@ const year = new Date().getFullYear();
 const month = new Date().getMonth() + 1;
 const date = new Date().getDate();
 const today = new Date(year, month, date).getTime();
-const nineClock = new Date(year, month, date, 18);
-const realTime2 = new Date(year, month, date, 12);
-const realTime3 = new Date(year, month, date, 25);
-const realTime4 = new Date(year, month, date, 2);
 
 export const localMiddleware = (req, res, next) => {
   res.locals.routes = routes;

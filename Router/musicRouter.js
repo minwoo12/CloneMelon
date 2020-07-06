@@ -10,7 +10,8 @@ import {
   musicDetail,
   genreKoreaDance,
   genreKoreaRap,
-  genreKoreaSoul
+  genreKoreaSoul,
+  musicDelete
 } from "../controllers/musicController";
 
 const musicRouter = express.Router();
@@ -29,5 +30,7 @@ musicRouter.get(routes.genreKoreaSoul, genreKoreaSoul);
 musicRouter.get(routes.genreAbroad, genreAbroad);
 
 musicRouter.get(routes.musicDetail(), musicDetail);
+
+musicRouter.get(routes.musicDelete(), musicDelete);
 
 export default musicRouter;

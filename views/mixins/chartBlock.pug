@@ -14,3 +14,64 @@ mixin musicDesBlock(music={})
 
 mixin musicLikeBlock(music={})
     .like=music.like
+
+mixin chartSideBox()
+    .sideMain__box
+        ul.sideMain__nav
+            a(href=`/music${routes.chart}/rise/day`)
+                li.nav__item.click__nav #{navtitle1}
+            a(href=`/music${routes.chartTrend}`)
+                li.nav__item #{navtitle3}
+            a(href=`/music${routes.chartStyle}`)
+                li.nav__item #{navtitle4}
+    .sideMain__title-box
+        .sideMain__title #{sideMainTitle}
+
+mixin chartButton()
+    ul.chart__button-nav
+        button 
+            i.fas.fa-play
+            | 전체 듣기
+        button
+            i.fas.fa-play 
+            | 듣기
+        button 
+            i.fas.fa-plus
+            | 담기
+        button
+            i.fas.fa-download
+            | 다운                    
+        button 
+            i.fas.fa-download
+            | FLAC
+        button
+            i.fas.fa-gift
+            | 선물
+
+mixin genreSideBox()
+    .sideMain__box
+        ul.sideMain__nav
+            a(href=`/music${routes.genre}`)
+                li.nav__item.click__nav #{navtitle1}
+            a(href=`/music${routes.genreAbroad}`)
+                li.nav__item #{navtitle2}
+    .sideMain__title-box
+        .sideMain__title #{sideMainTitle}
+
+mixin genreButton()
+    ul.chart__button-nav
+        button
+            i.fas.fa-play 
+            | 듣기
+        button 
+            i.fas.fa-plus
+            | 담기
+        button
+            i.fas.fa-download
+            | 다운                    
+        button 
+            i.fas.fa-download
+            | FLAC
+        button
+            i.fas.fa-gift
+            | 선물

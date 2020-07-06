@@ -12,3 +12,6 @@ block content
             views: musics.views,
             artist: musics.artist,
         })
+        if loggedUser && (loggedUser.dataValues.email === "fhghzl112@naver.com")
+            a(href=routes.musicDelete(musics.id))
+                button Delete

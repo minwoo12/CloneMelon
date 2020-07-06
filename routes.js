@@ -22,6 +22,13 @@ const routes = {
       return "/:id";
     }
   },
+  musicDelete: id => {
+    if (id) {
+      return `/music/${id}/delete`;
+    } else {
+      return "/:id/delete";
+    }
+  },
 
   //misic-chart
   //music-chart-top

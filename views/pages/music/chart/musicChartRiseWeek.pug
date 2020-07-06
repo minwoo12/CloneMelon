@@ -2,41 +2,14 @@ extends ../../../layouts/sideMain
 
 include ../../../mixins/chartBlock
 block content
-    .sideMain__box
-        ul.sideMain__nav
-            a(href=`/music${routes.chart}/rise/day`)
-                li.nav__item.click__nav #{navtitle1}
-            a(href=`/music${routes.chartTrend}`)
-                li.nav__item #{navtitle3}
-            a(href=`/music${routes.chartStyle}`)
-                li.nav__item #{navtitle4}
-    .sideMain__title-box
-        .sideMain__title #{sideMainTitle}
+    +chartSideBox()
     .chart__content-box
         .chart__content
             .chart__nav
                 a(href=`/music${routes.chart}/rise/day`).nav__item 일간
                 a(href=`/music${routes.chart}/rise/week`).nav__item.click__other__nav 주간
                 a(href=`/music${routes.chart}/rise/month`).nav__item 월간
-            ul.chart__button-nav
-                button 
-                    i.fas.fa-play
-                    | 전체 듣기
-                button
-                    i.fas.fa-play 
-                    | 듣기
-                button 
-                    i.fas.fa-plus
-                    | 담기
-                button
-                    i.fas.fa-download
-                    | 다운                    
-                button 
-                    i.fas.fa-download
-                    | FLAC
-                button
-                    i.fas.fa-gift
-                    | 선물
+            +chartButton()
             .chart__list
                 .chart__list-nav
                     .nav__item

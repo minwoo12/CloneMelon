@@ -1,4 +1,5 @@
 import { Music, Video } from "../db";
+import routes from "../routes";
 
 const year = new Date().getFullYear();
 const month = new Date().getMonth();
@@ -133,6 +134,27 @@ export const musicDetail = async (req, res) => {
       { where: { id } }
     );
     res.render("./pages/music/musicDetail", { musics });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const musicDelete = async (req, res) => {
+  const {
+    user,
+    params: { id }
+  } = req;
+  try {
+    if (req.user) {
+      if (user.dataValues.email !== "fhghzl112@naver.com") {
+        res.redirect(routes.musicDetail(id));
+      } else {
+        await Music.destroy({ where: { id } });
+        res.redirect(routes.home);
+      }
+    } else {
+      res.redirect(routes.musicDetail(id));
+    }
   } catch (error) {
     console.log(error);
   }
